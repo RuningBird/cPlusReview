@@ -34,8 +34,20 @@ void enumDemo() {
 	cout << s << endl;
 }
 
+/*变量声明/同函数声明*/
+extern int ext = 5;
+void changeExternVarable() {
+	int ext = 4;
+	ext++;
+}
+void showExternVarable() {
+	changeExternVarable();
+	cout << ext << endl;
+}
+
 int main() {
 	//showTypeSize();
-	enumDemo();
+	//enumDemo();
+	showExternVarable();
 	return 0;
 }
