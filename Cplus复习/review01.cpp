@@ -12,7 +12,30 @@ void showTypeSize() {
 	cout << "Size of wchar_t : " << sizeof(wchar_t) << endl;
 }
 
+/*enum ¸´Ï°*/
+void enumDemo() {
+	enum Sexy
+	{
+		male,
+		female
+	};
+	Sexy s = male;
+	switch (s)
+	{
+	case male:
+		cout << "ÄÐ" << endl;
+		break;
+	case female:
+		cout << "Å®" << endl;
+		break;
+	default:
+		break;
+	}
+	cout << s << endl;
+}
+
 int main() {
-	showTypeSize();
+	//showTypeSize();
+	enumDemo();
 	return 0;
 }
