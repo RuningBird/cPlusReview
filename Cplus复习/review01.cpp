@@ -1,5 +1,7 @@
 #include<iostream>
 #include<cmath>
+#include<ctime>
+#include<cstdlib>
 using namespace std;
 
 // 显示本机各个类型的大小
@@ -115,6 +117,22 @@ void showCmath() {
 	cout << "hypot(2, 2) is " << hypot(2, 2) << endl;//平方根
 	cout << "pow(2, 3) is " << pow(2, 3) << endl;
 }
+
+/*随机数*/
+void showRandom() {
+	srand((unsigned)time(NULL));
+	for (int i = 0; i < 5; i++) {
+		cout << rand() << endl;
+	}
+}
+/*[a,b]之间，随机数*/
+void showRandom(int a, int b) {
+	for (int i = 0; i < 70; i++) {
+		int res = a + rand() % (b - a + 1);
+		cout << res << endl;
+	}
+}
+
 int main() {
 	//showTypeSize();//本机各个类型大小
 	//enumDemo();//枚举
@@ -126,7 +144,13 @@ int main() {
 	//showStaticF2();
 
 	//showLambda();//lambda表达式
-	showCmath();
+	//showCmath();//数学相关计算
+
+	//showRandom();
+	showRandom(2, 6);	//随机数
+
+
+
 
 	return 0;
 }
