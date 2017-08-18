@@ -63,11 +63,53 @@ void area() {//常量
 	cout << "area = " << area << endl;
 }
 
+/*c plus 修饰符：signed unsigned long int*/
+void showModifier() {
+	unsigned x = 5;
+	short x1 = 5;
+	cout << sizeof(x) << endl;
+	cout << sizeof(x1) << endl;
+
+}
+/*static 关键字详解： static int test =cnt 与 static int test; test = cnt是不等价的*/
+int t1 = 0;
+void f1() {
+	static int test = t1;//静态变量只初始化一次，第二次调用不执行；
+	cout << test << endl;
+	t1++;
+}
+/*static测试1:*/
+void showStaticF1() {
+	f1();
+	f1();
+	f1();
+	cout << "-------------------------------" << endl;
+}
+
+int t2 = 0;
+void f2() {
+	static int test;
+	test = t2;//此处是复制，上一行已初始化
+	cout << test << endl;
+	t2++;
+}
+/*static测试2：*/
+void showStaticF2() {
+	f2();
+	f2();
+	f2();
+}
+
 int main() {
-	//showTypeSize();
-	//enumDemo();
-	//showExternVarable();
-	//area();
-	showConst();
+	//showTypeSize();//本机各个类型大小
+	//enumDemo();//枚举
+	//showExternVarable();//外部变量
+	//area();//const
+	//showConst(); //变量
+	//showModifier(); //修饰符
+	showStaticF1();
+	showStaticF2();
+
+
 	return 0;
 }
