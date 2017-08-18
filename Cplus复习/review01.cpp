@@ -88,7 +88,7 @@ void showStaticF1() {
 
 int t2 = 0;
 void f2() {
-	static int test;
+	static int test;//作用域仅限于该函数，但是该变量会持续到程序结束
 	test = t2;//此处是复制，上一行已初始化
 	cout << test << endl;
 	t2++;
@@ -100,6 +100,12 @@ void showStaticF2() {
 	f2();
 }
 
+/*lambda表达式*/
+void showLambda() {
+	auto addFun = [](int a, int b) {return a + b;};
+	cout << addFun(2, 3) << endl;
+}
+
 int main() {
 	//showTypeSize();//本机各个类型大小
 	//enumDemo();//枚举
@@ -107,9 +113,10 @@ int main() {
 	//area();//const
 	//showConst(); //变量
 	//showModifier(); //修饰符
-	showStaticF1();
-	showStaticF2();
+	//showStaticF1();//静态变量示例
+	//showStaticF2();
 
+	showLambda();
 
 	return 0;
 }
