@@ -45,9 +45,29 @@ void showExternVarable() {
 	cout << ext << endl;
 }
 
+/*常量和字符常量*/
+/*整型常量*/
+void showConst() {
+	int octonary = 077;
+	int decimal = 10;
+	int hexadecimal = 0xFF;
+
+	cout << octonary << endl << decimal << endl << hexadecimal << endl;
+
+}
+void area() {//常量
+	const double WIDTH = 10;
+	const double HIGHT = 10;
+	double area = WIDTH * HIGHT;
+
+	cout << "area = " << area << endl;
+}
+
 int main() {
 	//showTypeSize();
 	//enumDemo();
-	showExternVarable();
+	//showExternVarable();
+	//area();
+	showConst();
 	return 0;
 }
