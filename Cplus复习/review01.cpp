@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 
 // 显示本机各个类型的大小
@@ -105,7 +106,15 @@ void showLambda() {
 	auto addFun = [](int a, int b) {return a + b;};
 	cout << addFun(2, 3) << endl;
 }
-
+/*cmath库*/
+void showCmath() {
+	cout << "floor(2.5) is " << floor(2.5) << endl;
+	cout << "floor(-2.5) is " << floor(-2.5) << endl;
+	cout << "fabs(2.5) is " << fabs(2.5) << endl;
+	cout << "fabs(-2.5) is " << fabs(-2.5) << endl;
+	cout << "hypot(2, 2) is " << hypot(2, 2) << endl;//平方根
+	cout << "pow(2, 3) is " << pow(2, 3) << endl;
+}
 int main() {
 	//showTypeSize();//本机各个类型大小
 	//enumDemo();//枚举
@@ -116,7 +125,8 @@ int main() {
 	//showStaticF1();//静态变量示例
 	//showStaticF2();
 
-	showLambda();
+	//showLambda();//lambda表达式
+	showCmath();
 
 	return 0;
 }
