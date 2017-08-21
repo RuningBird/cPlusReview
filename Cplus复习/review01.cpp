@@ -145,6 +145,41 @@ void showRandom1() {
 	std::cout << '\n';
 }
 
+void showArray() {
+	int arr[6] = { 0,1,2,3,4,5 };
+	int *p;
+	p = arr;
+	cout << *(p + 1) << endl;
+	for (int i = 0; i < 6; i++) {
+		cout << *(p + i) << endl;
+	}
+}
+
+/*一维数组测试*/
+void changeArray(int arr[5]) {
+	arr[0] = 10000;
+}
+
+void showArray(int arr[5]) {
+
+	for (int i = 0; i < 5; i++)
+	{
+		cout << arr[i] << endl;
+	}
+}
+void showArray(int *p, int length) {
+	for (int i = 0; i < length; i++)
+	{
+		cout << *(p + i) << endl;
+	}
+}
+/*推荐这种传参方式*/
+void showArray(int arr[], int length) {
+	for (int i = 0; i < length; i++)
+	{
+		cout << arr[i] << endl;
+	}
+}
 int main() {
 	//showTypeSize();//本机各个类型大小
 	//enumDemo();//枚举
@@ -160,7 +195,15 @@ int main() {
 
 	//showRandom();
 	//showRandom(2, 6);	//随机数
-	showRandom1();
+	//showRandom1();
+	//showArray();
+
+	int arr[] = { 1,2,3,4,5 };
+	/*changeArray(arr);
+	showArray(arr);*/
+
+	showArray(&arr[0], 5);
+	showArray(arr, 5);
 
 
 
