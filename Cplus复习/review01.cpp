@@ -1,8 +1,10 @@
 #include<iostream>
+#include<iomanip>
 #include<cmath>
 #include<ctime>
 #include<cstdlib>
 #include<random>
+#include<string>
 using namespace std;
 
 // 显示本机各个类型的大小
@@ -188,6 +190,14 @@ int * getArray() {
 	static int arr[] = { 1,2,3,4,5 };//函数内，局部变量无法返回地址给外部变量，只能static
 	return arr;
 }
+
+void showCharArray() {
+	char str1[] = { 'a','b','c' };
+	char str2[] = { 'a','b','c','\0' };
+	cout << strlen(str1) << setw(3) << strlen(str2) << setw(2) << sizeof(str1) / sizeof(str1[0]) << endl;
+
+}
+
 int main() {
 	//showTypeSize();//本机各个类型大小
 	//enumDemo();//枚举
@@ -215,7 +225,7 @@ int main() {
 
 	//int *arr2 = getArray();
 	//showArray(arr2, 5);
-
+	showCharArray();
 
 
 	return 0;
