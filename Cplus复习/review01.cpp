@@ -184,6 +184,7 @@ void showArray(int arr[], int length) {
 
 /*返回数组：*/
 int * getArray() {
+	// 违背函数可重入性的理念，不建议这么写
 	static int arr[] = { 1,2,3,4,5 };//函数内，局部变量无法返回地址给外部变量，只能static
 	return arr;
 }
