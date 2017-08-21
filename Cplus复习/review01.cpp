@@ -5,6 +5,9 @@
 #include<cstdlib>
 #include<random>
 #include<string>
+
+#include<sstream> //可以判断字符串是否为数字
+#include<cctype> //可以判断单个字符是否是数字，字母等；
 using namespace std;
 
 // 显示本机各个类型的大小
@@ -195,9 +198,46 @@ void showCharArray() {
 	char str1[] = { 'a','b','c' };
 	char str2[] = { 'a','b','c','\0' };
 	cout << strlen(str1) << setw(3) << strlen(str2) << setw(2) << sizeof(str1) / sizeof(str1[0]) << endl;
+}
+
+void showString() {
+	char arrStr[] = "abc";
+	string str1 = string(arrStr);
+	string str2 = "abc";
+
+	cout << "rrStr[] = \"abc\" len:"<<strlen(arrStr) << endl;
+	cout << "string(arrStr) len is " << str1.length() << endl;
+	cout << "length of str2 is " << str2.length() << endl;
 
 }
 
+void showString1() {
+	string str = "abcdefg";
+	str.assign( "dcba",0,2);//dcBa前[0,2)个元素赋值给str
+	string str1 = "bcd";
+	cout << ("abc" < "abc") << endl;
+	cout << (str < str1) << endl;
+	cout << str << endl;
+	cout << str.find("cd") << endl;
+	cout << str.substr(0, 2) << endl; //substr[a, b)
+	cout << str.substr(0, string::npos)<<endl;
+
+	string *str2 = new string("new string");
+	cout << *str2 << endl;
+
+	string &str3 = *str2;
+	cout << str3 << endl;
+
+	
+
+}
+
+void showTypeString() {
+	cout << isdigit('A') << endl;
+	cout << isalpha('A') << endl;
+
+	cout << isalnum('a');
+}
 int main() {
 	//showTypeSize();//本机各个类型大小
 	//enumDemo();//枚举
@@ -225,7 +265,12 @@ int main() {
 
 	//int *arr2 = getArray();
 	//showArray(arr2, 5);
-	showCharArray();
+	//showCharArray();
+
+	/*string类*/
+	//showString1();
+	showTypeString();
+	
 
 
 
