@@ -167,18 +167,25 @@ void showArray(int arr[5]) {
 		cout << arr[i] << endl;
 	}
 }
-void showArray(int *p, int length) {
-	for (int i = 0; i < length; i++)
-	{
-		cout << *(p + i) << endl;
-	}
-}
+/*与：void showArray(int arr[], int length) 为重复定义*/
+//void showArray(int *p, int length) {
+//	for (int i = 0; i < length; i++)
+//	{
+//		cout << *(p + i) << endl;
+//	}
+//}
 /*推荐这种传参方式*/
 void showArray(int arr[], int length) {
 	for (int i = 0; i < length; i++)
 	{
 		cout << arr[i] << endl;
 	}
+}
+
+/*返回数组：*/
+int * getArray() {
+	static int arr[] = { 1,2,3,4,5 };//函数内，局部变量无法返回地址给外部变量，只能static
+	return arr;
 }
 int main() {
 	//showTypeSize();//本机各个类型大小
@@ -198,13 +205,15 @@ int main() {
 	//showRandom1();
 	//showArray();
 
-	int arr[] = { 1,2,3,4,5 };
-	/*changeArray(arr);
-	showArray(arr);*/
+	//int arr[] = { 1,2,3,4,5 };
+	///*changeArray(arr);
+	//showArray(arr);*/
 
-	showArray(&arr[0], 5);
-	showArray(arr, 5);
+	//showArray(&arr[0], 5);
+	//showArray(arr, 5);
 
+	//int *arr2 = getArray();
+	//showArray(arr2, 5);
 
 
 
