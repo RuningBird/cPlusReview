@@ -3,6 +3,7 @@
 #include<cmath>
 #include<ctime>
 #include<cstdlib>
+
 #include<random>
 #include<string>
 
@@ -237,6 +238,7 @@ void showTypeString() {
 	cout << isalpha('A') << endl;
 
 	cout << isalnum('a');
+	
 }
 int main() {
 	//showTypeSize();//本机各个类型大小
